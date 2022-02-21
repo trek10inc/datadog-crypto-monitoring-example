@@ -1,0 +1,26 @@
+{
+	"id": 61027167,
+	"name": "Bitcoin Price is going down!",
+	"type": "query alert",
+	"query": "max(last_15m):avg:bitcoin.current_price{*} < 39000",
+	"message": "{{#is_alert}}\nBitcoin Price is really really decreasing!\nenter_your_phone_#_here@txt.att.net (change email after @ depending on your provider T-Mobile: @tmomail.net Sprint: @messaging.sprintpcs.com Verizon @vtext.com )\n{{/is_alert}} \n\n{{#is_warning}}\nBitcoin Price is decreasing!\nenter_your_email_here@gmail.com\n{{/is_warning}} \n\n{{#is_no_data}}\nThe price of bitcoin is no longer getting reported to Datadog - check out the lambda function to make sure all is working! enter_your_email_here@gmail.com\n{{/is_no_data}}",
+	"tags": [],
+	"options": {
+		"notify_audit": false,
+		"locked": false,
+		"silenced": {},
+		"include_tags": true,
+		"thresholds": {
+			"critical": 39000,
+			"warning": 40000
+		},
+		"require_full_window": false,
+		"new_host_delay": 300,
+		"notify_no_data": true,
+		"renotify_interval": 0,
+		"escalation_message": "",
+		"no_data_timeframe": 30
+	},
+	"priority": null,
+	"classification": "metric"
+}
